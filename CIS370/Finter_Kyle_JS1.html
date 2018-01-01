@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<!-- JavaScript Activity # 1 - Take Home Pay -->
+<!-- Kyle Finter -->
+<html lang="en">
+    <head>
+        <title>JavaScript Activity # 1 - Take Home Pay</title>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        
+        <script>
+          function calculateTaxes() {
+              var annualIncome = prompt("What is your annual income?", "60000");
+              var fedTaxRate = prompt("What is your federal income tax rate (as a percentage)?", "20");
+              fedTaxRate = (fedTaxRate / 100).toFixed(2);
+              var stateTaxRate = prompt("What is your state tax rate (as a percentage)?", "6");
+              stateTaxRate = (stateTaxRate / 100).toFixed(2);
+              
+              var FICA = annualIncome * 0.0765;
+              var Medicare = annualIncome * 0.0145;
+              var federalTax = annualIncome * fedTaxRate;
+              var stateTax = annualIncome * stateTaxRate;
+              
+              var annualNet = annualIncome - FICA - Medicare - federalTax - stateTax;
+              
+              var monthlyGross = annualIncome / 12;
+              var monthlyNet = annualNet / 12;
+              
+              document.getElementById("annual").innerHTML = "Your annual salary (gross) is $" + annualIncome;
+              document.getElementById("annualNet").innerHTML = "Your annual salary (net) is $" + annualNet;
+              document.getElementById("monthly").innerHTML = "Your monthly salary (gross) is $" + monthlyGross;
+              document.getElementById("monthlyNet").innerHTML = "Your monthly salary (net) is $" + monthlyNet;
+              return;
+          }
+        </script>
+    </head>
+    <body>
+        <h1>My take home paycheck written by Kyle Finter</h1>
+        <button type="button" class="button" onclick="calculateTaxes()">Calculate our taxes</button>
+        <p id='annual'></p>
+        <p id='monthly'></p>
+        <p id='annualNet'></p>
+        <p id='monthlyNet'></p>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<!-- JavaScript Activity #5 Buying Groceries -->
+<!-- Kyle Finter -->
+<html lang="en">
+    <head>
+        <title>JavaScript Activity #5 Buying Groceries</title>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <script>
+            //Set initial total to 0
+            var total=0;
+            //Milk handler to add the milk value multipled by the dom value
+            function milkHandler(){
+                var number = document.orderForm.milk.value;
+                total=total+number*3.19;
+            }
+            //Egg handler to add the Egg value multipled by the dom value
+            function eggHandler(){
+                var number = document.orderForm.eggs.value;
+                total=total+number*3.55;
+            }
+            //Bread handler to add the Bread value multipled by the dom value
+            function breadHandler(){
+                var number = document.orderForm.bread.value;
+                total=total+number*3.49;
+            }
+            //Juice handler to add the Juice value multipled by the dom value
+            function juiceHandler(){
+                var number = document.orderForm.juice.value;
+                total=total+number*4.49;
+            }
+            //Honey handler to add the Honey value multipled by the dom value
+            function honeyHandler(){
+                var number = document.orderForm.honey.value;
+                total=total+number*6.59;
+            }
+            //Function called when the submit button is clicked. Adds taxes and alerts
+            function finish(){
+                total=total*1.076;
+                alert("Thank you for your order \n"+"Your total cost is: $"+total.toFixed(2)+"\n");
+            }
+        </script>
+    </head>
+    <body style="background-color: bisque">
+        <h1>This grocery order form was designed by Kyle Finter</h1>
+        <h3>Type in the quantities of each item you would like to purchase in the text boxes below</h3>
+        <form name="orderForm" onSubmit="finish()">
+            <p>
+                <label><input type="text" name="milk" size="3" onChange="milkHandler()"> Low Fat Milk ($3.19 per gallon)</label>
+            </p>
+            <p>
+                <label><input type="text" name="eggs" size="3" onChange="eggHandler()"> Cage Free Organic Eggs ($3.55 per dozen)</label>
+            </p>
+            <p>
+                <label><input type="text" name="bread" size="3" onChange="breadHandler()"> Whole Wheat Bread ($3.49 per loaf)</label>
+            </p>
+            <p>
+                <label><input type="text" name="juice" size="3" onChange="juiceHandler()"> Fresh Squeezed Grapefruit Juice ($4.49 per half gallon)</label>
+            </p>
+            <p>
+                <label><input type="text" name="honey" size="3" onChange="honeyHandler()"> Home Grown Honey ($6.59 per pint)</label>
+            </p>
+            <input type="reset" value="Reset" style="border-radius: 5px; background-color: white">
+            <input type="submit" value="Submit" style="border-radius: 5px; background-color: white">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+h1{
+    color: blueviolet;
+    text-align: center;
+    font-size: 36px;
+}
+fieldset{
+    background-color: cornsilk;
+}
+legend{
+    font-weight: bold;
+}
+input[type=text]{
+    background-color:azure;
+    border: 2px solid orange;
+    border-radius: 4px;
+    width: 100%;
+}
+input[type=submit], input[type=reset]{
+    background-color: darkblue;
+    color: white;
+    font: 18px;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}

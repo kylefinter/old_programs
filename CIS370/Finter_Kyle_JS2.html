@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<!-- JavaScript Activity #2 - String Array Manipulation -->
+<!-- Kyle Finter -->
+<html lang="en">
+    <head>
+        <title>JavaScript Activity #2 - String Array Manipulation</title>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        
+        <script>
+            //Populate the initial paragraphs with the arrays.
+            function initialArray() {
+                var females = ["Kate Austen","Juliet Burke","Anna Cortez"];
+                var males = ["James Ford","Hugo Reyes","Jack Shephard"];
+                document.getElementById("females").innerHTML = females.join(",");
+                document.getElementById("males").innerHTML = males.join(",");
+            }
+            
+            //For loop to print only the 5-8th position in the array
+            function printArray(array) {
+                var concatString = "";
+                for(i=4;i<8;i++){
+                    concatString += array[i] + "<br>";
+                }
+                return concatString;
+            }
+            
+            //Main function that gets the initial arrays, manipulates them, then inserts them into the correct paragraph
+            function stringMan() {
+                //Change the rest of the text to be shown
+                document.getElementById("toBeHidden").style.display="block";
+                //Grab string from initial paragraphs
+                var females = document.getElementById('females').innerHTML;
+                var males = document.getElementById('males').innerHTML;
+                
+                var femArray = females.split(",");
+                var maleArray = males.split(",");
+                
+                //Unshift, push, splice, splice, and concat
+                maleArray.unshift("Sayid Jarrah");
+                femArray.push("Claire Littleton");
+                femArray.splice(2,0,"Sun-Hwa Kwon");
+                maleArray.splice(3,0,"Desmond Hume");
+                var anotherMale = ["Ben Linus"];
+                maleArray = maleArray.concat(anotherMale);
+                
+                //combine arrays and sort
+                var sortCast = femArray.concat(maleArray).sort();
+                
+                //Slice on sroted array with second to fifth cast member
+                var partialCast = sortCast.slice(1,4);
+                
+                //For loop to print sorted cast list
+                var partialPrint = printArray(sortCast);
+                
+                //Puts all the manipulated strings into the paragraphs
+                document.getElementById("femaleArray").innerHTML = femArray.join();
+                document.getElementById("maleArray").innerHTML = maleArray.join();
+                document.getElementById("sorted").innerHTML = sortCast.join();
+                document.getElementById("partialSlice").innerHTML = partialCast.join();
+                document.getElementById("partialPrint").innerHTML = partialPrint;
+            }
+        </script>
+    </head>
+    <body onload="initialArray();" style="background-color:aqua">
+        <h1>A string array example</h1>
+        <h2>Written by Kyle Finter</h2>
+        <p>The Lost Female cast are:</p>
+        <p id="females"></p>
+        <p>The lost Male cast are:</p>
+        <p id="males"></p>
+        <button type="button" class="button" onclick="stringMan()" style="background-color: magenta; padding:14px; color:white; font-size:14px; font-family:Arial;">Ready to do some array manipulations?</button>
+        
+        <div id="toBeHidden" style="display: none">
+            <p>The Lost Female cast are:</p>
+            <p id="femaleArray"></p>
+            <p>The Lost Male cast are:</p>
+            <p id="maleArray"></p>
+            <p>The sorted cast of Lost are the following:</p>
+            <p id="sorted"></p>
+            <p>The partial cast of Lost are the following using the slice command that contains the second array item up to but not including the fifth array item:</p>
+            <p id="partialSlice"></p>
+            <p>The partial cast of Lost using a for loop (fifth array item to the eighth array item inclusive):</p>
+            <p id="partialPrint"></p>
+        </div>
+    </body>
+</html>

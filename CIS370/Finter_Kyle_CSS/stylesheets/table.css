@@ -1,0 +1,30 @@
+h1{
+    text-align: center;
+}
+table{
+    width: 100%;
+    font-size: 18px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table:hover{
+    background-color: aqua;
+}
+th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 18px;
+    padding: 2px;
+}
+th{
+    background-color:cadetblue;
+}
+tr:nth-child(even){
+    background-color:cornflowerblue;
+}
+caption{
+    caption-side: bottom;
+    color:crimson;
+    font-size: 48px;
+}

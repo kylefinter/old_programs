@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<!-- JavaScript Activity #4 - Rolling a DIE -->
+<!-- Kyle Finter -->
+<html lang="en">
+    <head>
+        <title>JavaScript Activity #4 - Rolling a DIE</title>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    </head>
+    <body onload="promptUser()">
+        <!-- Inital text is held in paragraphs. This text will be replaced when the appropiate function is called. promptUser when page loads will initially populate the first two paragraphs. Then when you click the button. The calculations happen as well as replacing the text below the button.-->
+        <h1>This program was written by Kyle Finter</h1>
+        <p id="numSides">The number of sides</p>
+        <p id="maxScore">The maximum score</p>
+        <button type="button" class="button" onclick="rollDie()" style="border-radius: 6px; background-color: white">Roll the die</button>
+        <p id="currentRoll">Place my current roll here</p>
+        <p id="totalScore">Place my total score here</p>
+        <p id="numberTurns">Place my total number of turns here</p>
+        <script>
+            //Global variables for number of sides and maximum score
+            var numSides=0;
+            var maxScore=0;
+            //Initially prompt user when page loads
+            function promptUser(){
+                //Prompts and parse to int because if we don't the (numSides+1) returns a larger number than the actual one
+                //Example if we input 6 then in the method below 6 becomes a 61 sided die unless you either parseInt or change the (numSides+1) -> numSides + 1 no parentheses
+                numSides = parseInt(prompt("Input the number of sides:",6));
+                maxScore = parseInt(prompt("Input the maximum score:",1000000));
+                //Put the values into the paragraphs on the page
+                document.getElementById("numSides").innerHTML = "The number of sides of the die are "+numSides;
+                document.getElementById("maxScore").innerHTML = "The maximum score is "+maxScore;
+            }
+            //Called when the button is clicked
+            function rollDie(){
+                //Initialize values to zero
+                var totalScore=0;
+                var numberTurns=0;
+                var myRoll=0;
+                //Loop until totalScore is more than maxScore
+                while(totalScore<maxScore){
+                    //Roll
+                    var myRoll = Math.floor(Math.random()*(numSides+1));
+                    //Add to total score
+                    totalScore+=myRoll;
+                    //Increment number of turns
+                    numberTurns++;
+                }
+                //Put the values into the paragraphs on the page
+                document.getElementById("currentRoll").innerHTML = "The current roll of the die is "+myRoll;
+                document.getElementById("totalScore").innerHTML = "My total score is "+totalScore;
+                document.getElementById("numberTurns").innerHTML = "My total number of turns are "+numberTurns;
+            }
+        </script>
+    </body>
+</html>

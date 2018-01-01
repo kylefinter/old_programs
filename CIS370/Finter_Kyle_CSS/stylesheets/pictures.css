@@ -1,0 +1,27 @@
+body {
+    background-color: azure;
+}
+h1 {
+    text-align: center;
+    }
+img {
+    border: 1px solid blue;
+    border-radius: 25%;
+    display: inline;
+    height: auto;
+    margin: auto;
+    max-width: 100%;
+    opacity: 0.8;
+    padding: 3px;
+}
+img:hover {
+    opacity: 1;
+}
+figure{
+    float: left;
+}
+figcaption {
+    text-align: center;
+    color: darkred;
+    font-size: 24px;
+}

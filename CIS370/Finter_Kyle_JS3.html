@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<!-- JavaScript Activity #3 - Numeric Array Manipulation -->
+<!-- Kyle Finter -->
+<html lang="en">
+    <head>
+        <title>JavaScript Activity #3 - Numeric Array Manipulation</title>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <script>
+            var differenceArray;
+            //Called from the print array button
+            function printArrays() {
+                //Change the print array text to be shown
+                document.getElementById("toBeHidden").style.display="block";
+                
+                //Initial Arrays
+                var number1 = [356,465,789,369,258];
+                var number2 = [257,147,108,153,159];
+                var number3 = [834,567,684];
+                var number4 = [689,492,536];
+
+                //Add three to each
+                number1 = number1.concat(number3);
+                number2 = number2.concat(number4);
+                
+                //Put into elements on page
+                document.getElementById("number1").innerHTML = "The before weights are as follows: "+number1.join();
+                document.getElementById("number2").innerHTML = "The after weights are as follows: "+number2.join();
+                
+                differenceArray = [];
+                //Find difference of weights
+                for(var i =0; i<number1.length;i++){
+                    differenceArray[i]=number1[i]-number2[i];
+                }
+                //Put into element on page
+                document.getElementById("difference").innerHTML = "The difference in weights are as follows: "+differenceArray.join();
+                
+                //Find average of differenceArray
+                var sum =0;
+                for(i =0; i<differenceArray.length;i++){
+                    sum=sum+differenceArray[i];
+                }
+                var average = sum/differenceArray.length;
+                
+                //Put into element on page
+                document.getElementById("average").innerHTML = "The average difference is "+average;
+            }
+            
+            //Called from sort differences button
+            function sortDifferences() {
+                //Change the print array text to be shown
+                document.getElementById("toBeHiddenDiff").style.display="block";
+                
+                //Get difference array and sort ascending with for 2 digit and 3 digit numbers
+                var sortedArray = differenceArray.sort(function(a, b){return a-b});
+                
+                //Put the sorted difference array in the paragraph
+                document.getElementById("sorted").innerHTML = "The sorted difference array is as follows: "+sortedArray.join();
+            }
+        </script>
+    </head>
+    <body style="background-color:bisque">
+        <h1>A string array example</h1>
+        <h2>Written by Kyle Finter</h2>
+        <button type="button" class="button" onclick="printArrays()" style="background-color: magenta; padding:14px; margin-bottom: 10px; color:white; font-size:14px; font-family:Arial;">Do you want to print the arrays?</button>
+        
+        <div id="toBeHidden" style="display: none">
+            <p id="number1"></p>
+            <p id="number2"></p>
+            <p id="difference"></p>
+            <p id="average"></p>
+        </div>
+        <br/>
+        <button type="button" class="button" onclick="sortDifferences()" style="background-color: blue; padding:14px; color:white; font-size:14px; font-family:Arial;">Do you want to sort the differences?</button>
+        
+        <div id="toBeHiddenDiff" style="display: none">
+            <p id="sorted"></p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+body{
+    background-color: floralwhite;
+    color: brown;
+}
+.ordered{
+    background-color: aquamarine;
+    font-size: 18px;
+    list-style-type: lower-alpha;
+    padding: 20px;
+}
+.ordered li{
+    color:darkblue;
+    background-color: darkred;
+    margin: 20px;
+    padding: 20px;
+}
+.unordered{
+    background-color:navy;
+    font-size: 18px;
+    list-style-type: circle;
+    
+}
+.unordered li{
+    background-color: azure;
+    color: darkgreen;
+    margin: 20px;
+    padding: 6px;
+}

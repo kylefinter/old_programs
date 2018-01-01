@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <![endif]-->
+        <title>Kyle Finter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="stylesheets/menu.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/form.css">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="Finter_Kyle_index.html">My Index</a></li>
+                <li><a href="Finter_Kyle_resume.html">My Resume</a></li>
+                <li><a href="Finter_Kyle_pictures.html">My Pictures</a></li>
+                <li><a href="Finter_Kyle_lists.html">My Lists</a></li>
+                <li><a href="Finter_Kyle_table.html">My Table</a></li>
+                <li><a href="Finter_Kyle_media.html">My Media</a></li>
+                <li><a class="active" href="Finter_Kyle_form.html">My Form</a></li>
+            </ul>
+        </nav>
+        <h1>What TV would you like to order?</h1>
+        <form action="">
+            <fieldset>
+                <legend>Features:</legend>
+                Size: <input type="radio" name="size" value="32" checked> 32"
+                <input type="radio" name="size" value="65"> 65"<br>
+                Resolution: <select name="resolution">
+                    <option value="720">720p</option>
+                    <option value="1080" selected>1080p</option>
+                    <option value="2160">2160p</option>
+                </select><br>
+                <input type="checkbox" name="hdr" value="1" checked> HDR
+                <input type="checkbox" name="3D" value="1"> 3D<br>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Buy:</legend>
+				Number of TV's with the selected features above: <select name="quantity">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select><br>
+                First name: <input type="text" name="fname"><br>
+                Last name: <input type="text" name="lname"><br>
+            </fieldset>
+            <br>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </body>
+</html>
